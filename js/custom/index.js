@@ -1,4 +1,4 @@
-let cyan = {};
+let cyan = {}; //初始化函数
 cyan.showRightMenu = function (isTrue, x = 0, y = 0) {
     let $rightMenu = $('#rightMenu');
     $rightMenu.css('top', x + 'px').css('left', y + 'px');
