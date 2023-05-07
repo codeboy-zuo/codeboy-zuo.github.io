@@ -2,21 +2,37 @@
   font-family: "iconfont"; /* Project id 4053868 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1683430172182') format('woff2'),
-       url('iconfont.woff?t=1683430172182') format('woff'),
-       url('iconfont.ttf?t=1683430172182') format('truetype');
+       url('iconfont.woff2?t=1683439337107') format('woff2'),
+       url('iconfont.woff?t=1683439337107') format('woff'),
+       url('iconfont.ttf?t=1683439337107') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-shouye:before {
-  content: "\e660";
+.icon-shouye1:before {
+  content: "\e606";
+}
+
+.icon-fenlei1:before {
+  content: "\e61e";
+}
+
+.icon-yinle:before {
+  content: "\e616";
+}
+
+.icon-QQ:before {
+  content: "\ea94";
+}
+
+.icon-rili:before {
+  content: "\f2de";
 }
 
 .icon-xiuxian:before {
@@ -27,11 +43,7 @@
   content: "\e6bb";
 }
 
-.icon-guanyuwomen:before {
+.icon-guanyu:before {
   content: "\e634";
-}
-
-.icon-fenlei:before {
-  content: "\f2ad";
 }
 
