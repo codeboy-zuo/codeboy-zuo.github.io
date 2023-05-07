@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 4053868 */
+  font-family: "iconfont"; /* Project id 4054497 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1683439337107') format('woff2'),
-       url('iconfont.woff?t=1683439337107') format('woff'),
-       url('iconfont.ttf?t=1683439337107') format('truetype');
+       url('iconfont.woff2?t=1683469217233') format('woff2'),
+       url('iconfont.woff?t=1683469217233') format('woff'),
+       url('iconfont.ttf?t=1683469217233') format('truetype');
 }
 
 .iconfont {
@@ -15,28 +15,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-shouye1:before {
-  content: "\e606";
+.icon-xiuxian:before {
+  content: "\e62a";
 }
 
-.icon-fenlei1:before {
-  content: "\e61e";
+.icon-dianying:before {
+  content: "\e67f";
 }
 
-.icon-yinle:before {
-  content: "\e616";
+.icon-shouye:before {
+  content: "\e602";
 }
 
-.icon-QQ:before {
-  content: "\ea94";
+.icon-fenlei:before {
+  content: "\e603";
 }
 
 .icon-rili:before {
-  content: "\f2de";
-}
-
-.icon-xiuxian:before {
-  content: "\e62a";
+  content: "\e86d";
 }
 
 .icon-biaoqian:before {
@@ -45,5 +41,17 @@
 
 .icon-guanyu:before {
   content: "\e634";
+}
+
+.icon-book:before {
+  content: "\e60d";
+}
+
+.icon-yinle:before {
+  content: "\e609";
+}
+
+.icon-bilibili:before {
+  content: "\e60a";
 }
 
