@@ -8,6 +8,10 @@
 }
 
 
+/* 最新图标相对位置 */
+#recent-posts>.recent-post-item {
+    position: relative;
+}
 /* 最新文章图标 */
 .newPost-left,
 .newPost-right {
