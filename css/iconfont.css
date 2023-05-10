@@ -19,6 +19,10 @@
   content: "\e62a";
 }
 
+.icon-tongji:before {
+  content: "\e60b";
+}
+
 .icon-dianying:before {
   content: "\e67f";
 }
