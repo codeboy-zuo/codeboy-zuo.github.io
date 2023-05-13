@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>主页添加Github贡献图</title>
+      <link href="/post/47479.html"/>
+      <url>/post/47479.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>看到很多博主的主页都挂载上了自己github的贡献图，怪好看的，所以也打算整一个，所实话我研究了好几天，<code>npm i ...</code> 和<code>npm uninstall ...</code>不知道执行了多少次，配置改了又改，一键三连后，恭喜一直喜提loading….,尽管如此，这么好看的贡献图怎么能购放弃呢，经过不懈的捶打我的电脑。。。不是，经过不懈的努力和尝试，今天终于喜提如下画面：<br><img src="https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/img/githubcalendar.png" align=center /></p><p>鉴于其他方法的不可实现性(是我的问题,下次实现了再讲)，我就讲下我是怎么实现的吧</p><h2 id="div-js的挂载方法"><a href="#div-js的挂载方法" class="headerlink" title="div+js的挂载方法"></a>div+js的挂载方法</h2><ul><li><p>将<a href="https://github.com/Zfour/hexo-github-calendar"> https://github.com/Zfour/hexo-github-calendar</a>中的<code>githubcalendar.js</code>下载至<code>butterfly</code>下的<code>js</code>文件下并命名为<code>githubcalendar.js</code><br>修改用户名：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params"></span>)&#123;<span class="keyword">var</span> git_user = <span class="string">&#x27;codeboy-zuo&#x27;</span>;</span><br><span class="line">    <span class="keyword">var</span> github_container = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;github_container&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> github_loading = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;github_loading&#x27;</span>);</span><br></pre></td></tr></table></figure></li><li><p>在主题配置文件中引入：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bottom:</span><br><span class="line">    - <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/js/githubcalendar.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>修改index.pug：</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">block content</span><br><span class="line"><span class="keyword">include</span> .<span class="regexp">/includes/mi</span>xins/post-ui.pug</span><br><span class="line">#recent-posts.recent-posts</span><br><span class="line">+   &lt;<span class="keyword">div</span> id=<span class="string">&quot;github_container&quot;</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">    +postUI</span><br><span class="line">    <span class="keyword">include</span> <span class="keyword">includes</span>/pagination.pug</span><br></pre></td></tr></table></figure><p>最后一键三连即可<code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</code></p></li></ul><h2 id="自建API"><a href="#自建API" class="headerlink" title="自建API"></a>自建API</h2><blockquote><p>参考：<a href="https://github.com/Zfour/python_github_calendar_api">https://github.com/Zfour/python_github_calendar_api</a></p></blockquote><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> github_canlendar = <span class="function">(<span class="params">git_user, git_color</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> git_githubapiurl = <span class="string">&quot;https://gitcalendar.ldfbg.com/api?&quot;</span> + git_user;</span><br></pre></td></tr></table></figure><ul><li>登入<a href="https://vercel.com">Vercel</a>新建项目，然后导入第三方库</li></ul><blockquote><p><a href="https://github.com/Zfour/python_github_calendar_api">https://github.com/Zfour/python_github_calendar_api</a></p></blockquote><p><img src="https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/img/p1.png" align=center /></p><p><img src="https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/img/p2.png" align=center /><br>点击继续，然后自定义项目名称，点击创建，等待Deploy完成<br><img src="https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/img/p3.png" align=center /></p><ul><li>自此api自建完成,检查api是否配置成功,访问api链接（url链接 + ‘/api’ + git用户名，例如我的是<br><code>https://github-calendar-theta.vercel.app/api/?codeboy-zuo</code><br>显示数据则配置成功</li></ul><h2 id="可能存在的问题"><a href="#可能存在的问题" class="headerlink" title="可能存在的问题"></a>可能存在的问题</h2><p>自建的api访问报错<br><img src="https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/img/p4.png" align=center /></p><p>将下面代码复制，更换github仓库的<code>/api/index.py</code>,即可创建成功<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> http.server <span class="keyword">import</span> BaseHTTPRequestHandler</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">list_split</span>(<span class="params">items, n</span>):</span><br><span class="line">    <span class="keyword">return</span> [items[i:i + n] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(items), n)]</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getdata</span>(<span class="params">name</span>):</span><br><span class="line">    gitpage = requests.get(<span class="string">&quot;https://github.com/&quot;</span> + name)</span><br><span class="line">    data = gitpage.text</span><br><span class="line">    datadatereg = re.<span class="built_in">compile</span>(<span class="string">r&#x27;data-date=&quot;(.*?)&quot; data-level&#x27;</span>)</span><br><span class="line">    datacountreg = re.<span class="built_in">compile</span>(<span class="string">r&#x27;rx=&quot;2&quot; ry=&quot;2&quot;&gt;(.*?) contribution&#x27;</span>)</span><br><span class="line">    datadate = datadatereg.findall(data)</span><br><span class="line">    datacount = datacountreg.findall(data)</span><br><span class="line">    datacount = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, [<span class="number">0</span> <span class="keyword">if</span> i == <span class="string">&quot;No&quot;</span> <span class="keyword">else</span> i <span class="keyword">for</span> i <span class="keyword">in</span> datacount]))</span><br><span class="line">    contributions = <span class="built_in">sum</span>(datacount)</span><br><span class="line">    datalist = []</span><br><span class="line">    <span class="keyword">for</span> index, item <span class="keyword">in</span> <span class="built_in">enumerate</span>(datadate):</span><br><span class="line">        itemlist = &#123;<span class="string">&quot;date&quot;</span>: item, <span class="string">&quot;count&quot;</span>: datacount[index]&#125;</span><br><span class="line">        datalist.append(itemlist)</span><br><span class="line">    datalistsplit = list_split(datalist, <span class="number">7</span>)</span><br><span class="line">    returndata = &#123;</span><br><span class="line">        <span class="string">&quot;total&quot;</span>: contributions,</span><br><span class="line">        <span class="string">&quot;contributions&quot;</span>: datalistsplit</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> returndata</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">handler</span>(<span class="title class_ inherited__">BaseHTTPRequestHandler</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">do_GET</span>(<span class="params">self</span>):</span><br><span class="line">        path = self.path</span><br><span class="line">        user = path.split(<span class="string">&#x27;?&#x27;</span>)[<span class="number">1</span>]</span><br><span class="line">        data = getdata(user)</span><br><span class="line">        self.send_response(<span class="number">200</span>)</span><br><span class="line">        self.send_header(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">        self.send_header(<span class="string">&#x27;Content-type&#x27;</span>, <span class="string">&#x27;application/json&#x27;</span>)</span><br><span class="line">        self.end_headers()</span><br><span class="line">        self.wfile.write(json.dumps(data).encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Butterfly主题优化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Butterfly </tag>
+            
+            <tag> githubcalendar </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Butterfly主题优化(一)</title>
       <link href="/post/46969.html"/>
       <url>/post/46969.html</url>
@@ -108,11 +135,11 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>博客统计</title>
+      <link href="/echarts/index.html"/>
+      <url>/echarts/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<!-- 文章发布时间统计图 --><div id="posts-chart" data-start="2023-01" style="border-radius: 8px; height: 300px; padding: 10px;"></div><!-- 文章标签统计图 --><div id="tags-chart" data-length="10" style="border-radius: 8px; height: 300px; padding: 10px;"></div><!-- 文章分类统计图 --><div id="categories-chart" data-parent="true" style="border-radius: 8px; height: 300px; padding: 10px;"></div>]]></content>
       
     </entry>
     
@@ -130,11 +157,11 @@
     
     
     <entry>
-      <title>博客统计</title>
-      <link href="/echarts/index.html"/>
-      <url>/echarts/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<!-- 文章发布时间统计图 --><div id="posts-chart" data-start="2023-01" style="border-radius: 8px; height: 300px; padding: 10px;"></div><!-- 文章标签统计图 --><div id="tags-chart" data-length="10" style="border-radius: 8px; height: 300px; padding: 10px;"></div><!-- 文章分类统计图 --><div id="categories-chart" data-parent="true" style="border-radius: 8px; height: 300px; padding: 10px;"></div>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
