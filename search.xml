@@ -113,9 +113,9 @@
     
     
     <entry>
-      <title>休闲</title>
-      <link href="/leisure/index.html"/>
-      <url>/leisure/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -157,9 +157,9 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>休闲</title>
+      <link href="/leisure/index.html"/>
+      <url>/leisure/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
