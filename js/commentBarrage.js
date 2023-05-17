@@ -12,7 +12,7 @@ const commentBarrageConfig = {
     //弹幕显示间隔时间，单位ms
     barrageTime: 3000,
     //twikoo部署地址（Vercel、私有部署），腾讯云的为环境ID
-    twikooUrl: "https://vercel.com/codeboy-zuo/twikoo",
+    twikooUrl: "https://twikoo-zeta-azure.vercel.app/",
     //token获取见前文
     accessToken: "02ecbd44cc108bd386151e4c2da85851",
     pageUrl: window.location.pathname,
