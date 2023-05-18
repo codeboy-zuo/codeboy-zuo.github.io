@@ -10,7 +10,7 @@ const commentBarrageConfig = {
     //同时最多显示弹幕数
     maxBarrage: 1,
     //弹幕显示间隔时间，单位ms
-    barrageTime: 3000,
+    barrageTime: 4000,
     //twikoo部署地址（Vercel、私有部署），腾讯云的为环境ID
     twikooUrl: "https://twikoo-zeta-azure.vercel.app/",
     //token获取见前文
