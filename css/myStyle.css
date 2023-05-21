@@ -161,13 +161,13 @@
   }
   
   body:has(#anMusic-page) {
-    background: rgb(13, 13, 13);
+    background: rgb(0, 0, 0);
   }
   
   #anMusic-page meting-js .aplayer {
     display: flex;
     flex-direction: row-reverse;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(216, 16, 16, 0);
     border: none;
     box-shadow: none;
   }
