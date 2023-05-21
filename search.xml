@@ -8,7 +8,7 @@
       <link href="/post/30229.html"/>
       <url>/post/30229.html</url>
       
-        <content type="html"><![CDATA[<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><ol><li>在根目录打开终端<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> hexo-abbrlink <span class="attr">--save</span></span><br></pre></td></tr></table></figure></li><li>在站点配置文件中修改<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">permalink:</span> post/:abbrlink.html  <span class="meta">#文章永久链接格式  可自行设置，也可直接使用  :abbrlink.html</span></span><br></pre></td></tr></table></figure></li><li>最后一键三连即可查看效果<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><strong><em>该样式适合新建站的小伙伴，因为刚使用时阅读人数和评论数会归0！！！</em></strong></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><ol><li>在根目录打开终端<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> hexo-abbrlink <span class="attr">--save</span></span><br></pre></td></tr></table></figure></li><li>在站点配置文件中修改<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">permalink:</span> post/:abbrlink.html  <span class="meta">#文章永久链接格式  可自行设置，也可直接使用  :abbrlink.html</span></span><br></pre></td></tr></table></figure></li><li>最后一键三连即可查看效果</li></ol><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p><strong><em>该样式适合新建站的小伙伴，因为刚使用时阅读人数和评论数会归0！！！</em></strong></p>]]></content>
       
       
       <categories>
@@ -151,17 +151,6 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>博客统计</title>
       <link href="/echarts/index.html"/>
       <url>/echarts/index.html</url>
@@ -173,9 +162,9 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>音乐馆</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -184,9 +173,20 @@
     
     
     <entry>
-      <title>休闲</title>
-      <link href="/leisure/index.html"/>
-      <url>/leisure/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
