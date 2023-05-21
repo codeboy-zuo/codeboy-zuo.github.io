@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>如何添加一个好看的音乐馆页面</title>
+      <link href="/post/21442.html"/>
+      <url>/post/21442.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol><li>在主题配置文件中找到<code>meting_js</code><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>npm.elemecdn.com<span class="regexp">/hexo-anzhiyu-music@1.0.1/</span>assets<span class="regexp">/js/</span>Meting2.min.js</span><br></pre></td></tr></table></figure></li><li>在根目录下打开终端输入<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> <span class="keyword">new</span> page music</span><br></pre></td></tr></table></figure>修改根目录下的<code>souse/music/index.md</code>文件<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">音乐馆</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&#x27;music&#x27;</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-05-21 19:35:31</span></span><br><span class="line"><span class="attr">aplayer:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">top_img:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></li><li>创建页面，新建<code>themes/butterfly/layout/includes/page/music.pug</code>,请自行修改<code>id</code>以及<code>server</code>添加如下代码<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#anMusic-page</span></span><br><span class="line">  meting-js(<span class="attribute">id</span>=<span class="string">&quot;7621312462&quot;</span> <span class="attribute">server</span>=<span class="string">&quot;netease&quot;</span> <span class="attribute">type</span>=<span class="string">&quot;playlist&quot;</span> <span class="attribute">mutex</span>=<span class="string">&quot;true&quot;</span> <span class="attribute">preload</span>=<span class="string">&quot;auto&quot;</span> <span class="attribute">theme</span>=<span class="string">&quot;var(--anzhiyu-main)&quot;</span> <span class="attribute">order</span>=<span class="string">&quot;list&quot;</span>)</span><br></pre></td></tr></table></figure></li><li>修改</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Butterfly主题优化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用abbrlink生成文章唯一链接</title>
       <link href="/post/30229.html"/>
       <url>/post/30229.html</url>
@@ -140,17 +167,6 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>关于</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -173,9 +189,9 @@
     
     
     <entry>
-      <title>音乐馆</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -187,6 +203,17 @@
       <title>标签</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>音乐馆</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

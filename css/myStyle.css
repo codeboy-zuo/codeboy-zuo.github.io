@@ -133,7 +133,7 @@
   /* 文章顶部波浪css */
 
 
-  /* 音乐 */
+  /* 音乐页面样式 */
   #page:has(#anMusic-page) {
     border: 0;
     box-shadow: none !important;
