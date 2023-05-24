@@ -1,10 +1,8 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 4054497 */
-  /* Color fonts */
-  src: 
-       url('iconfont.woff2?t=1683469217233') format('woff2'),
-       url('iconfont.woff?t=1683469217233') format('woff'),
-       url('iconfont.ttf?t=1683469217233') format('truetype');
+  font-family: "iconfont"; /* Project id 4083483 */
+  src: url('iconfont.woff2?t=1684858920630') format('woff2'),
+       url('iconfont.woff?t=1684858920630') format('woff'),
+       url('iconfont.ttf?t=1684858920630') format('truetype');
 }
 
 .iconfont {
@@ -15,47 +13,55 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-xiuxian:before {
-  content: "\e62a";
+.icon-yinle:before {
+  content: "\e711";
 }
 
-.icon-tongji:before {
-  content: "\e60b";
-}
-
-.icon-dianying:before {
-  content: "\e67f";
-}
-
-.icon-shouye:before {
-  content: "\e602";
-}
-
-.icon-fenlei:before {
-  content: "\e603";
-}
-
-.icon-rili:before {
-  content: "\e86d";
+.icon-wode1:before {
+  content: "\e620";
 }
 
 .icon-biaoqian:before {
-  content: "\e6bb";
+  content: "\e62b";
 }
 
-.icon-guanyu:before {
-  content: "\e634";
+.icon-rss:before {
+  content: "\e7ea";
 }
 
-.icon-book:before {
-  content: "\e60d";
+.icon-pengyouquan-copy:before {
+  content: "\e655";
 }
 
-.icon-yinle:before {
-  content: "\e609";
+.icon-gongjiao:before {
+  content: "\e62d";
 }
 
-.icon-bilibili:before {
-  content: "\e60a";
+.icon-fanti:before {
+  content: "\e6d8";
+}
+
+.icon-tongji:before {
+  content: "\e622";
+}
+
+.icon-fenlei:before {
+  content: "\e7e2";
+}
+
+.icon-plume:before {
+  content: "\e960";
+}
+
+.icon-fenlei1:before {
+  content: "\e63a";
+}
+
+.icon-wenzhang:before {
+  content: "\ed21";
+}
+
+.icon-danmu:before {
+  content: "\e600";
 }
 
