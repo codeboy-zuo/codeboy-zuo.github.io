@@ -39,7 +39,7 @@ $.ajax({
                     posdesc = "よろしく，一起去看樱花吗";
                     break;
                 case "越南":
-                    posdesc = "Trời ơi，chào mừng em bé của tôi";
+                    posdesc = "Trời ơi,chào mừng em bé của anh";
                     break;
                 case "美国":
                     posdesc = "Make America Great Again!";
@@ -48,7 +48,7 @@ $.ajax({
                     posdesc = "想同你一起夜乘伦敦眼";
                     break;
                 case "俄罗斯":
-                    posdesc = "干了这瓶伏特加！";
+                    posdesc = "乌拉！";
                     break;
                 case "法国":
                     posdesc = "C'est La Vie";
@@ -72,7 +72,7 @@ $.ajax({
                             posdesc = "讲段相声吧。";
                             break;
                         case "重庆市":
-                            posdesc = "老乡！！！"
+                            posdesc = "带我吃火锅~~~"
                             break;
                         case "河北省":
                             posdesc = "山势巍巍成壁垒，天下雄关。铁马金戈由此向，无限江山。";
@@ -98,7 +98,7 @@ $.ajax({
                         case "江苏省":
                             switch (ipLoacation.result.ad_info.city) {
                                 case "南京市":
-                                    posdesc = "欢迎来自安徽省南京市的小伙伴。";
+                                    posdesc = "江南佳丽地，金陵帝王州。";
                                     break;
                                 case "苏州市":
                                     posdesc = "上有天堂，下有苏杭。";
@@ -118,7 +118,17 @@ $.ajax({
                             posdesc = "井邑白云间，岩城远带山。";
                             break;
                         case "江西省":
-                            posdesc = "落霞与孤鹜齐飞，秋水共长天一色。";
+                            switch (ipLoacation.result.ad_info.city) {
+                                case "赣州市":
+                                    posdesc = "哇是老乡啊！！！";
+                                    break;
+                                case "九江市":
+                                    posdesc = "不识庐山真面目，只缘身在此山中。";
+                                    break;
+                                default:
+                                    posdesc = "落霞与孤鹜齐飞，秋水共长天一色。";
+                                    break;
+                            }
                             break;
                         case "山东省":
                             posdesc = "遥望齐州九点烟，一泓海水杯中泻。";
@@ -187,17 +197,17 @@ $.ajax({
             //判断时间
             let timeChange;
             let date = new Date();
-            if (date.getHours()>= 5 && date.getHours() < 11) timeChange = "<span>上午好</span>，一日之计在于晨";
-            else if (date.getHours()>= 1 && date.getHours() < 13) timeChange = "<span>中午好</span>，该摸鱼吃午饭了";
+            if (date.getHours()>= 5 && date.getHours() < 11) timeChange = "<span>上午好</span>，一日之计在于晨!";
+            else if (date.getHours()>= 11 && date.getHours() < 13) timeChange = "<span>中午好</span>，该摸鱼吃午饭了!";
             else if (date.getHours() >= 13 && date.getHours() < 15) timeChange = "<span>下午好</span>，懒懒地睡个午觉吧！";
-            else if (date.getHours() >= 15 && date.getHours() < 16) timeChange = "<span>三点几啦</span>，饮茶先啦！";
+            else if (date.getHours() >= 15 && date.getHours() < 16) timeChange = "<span>三点多啦</span>，下午茶时刻！";
             else if (date.getHours() >= 16 && date.getHours() < 19) timeChange = "<span>夕阳无限好！</span>";
             else if (date.getHours() >= 19 && date.getHours() < 24) timeChange = "<span>晚上好</span>，夜生活嗨起来！";
-            else timeChange = "夜深了，早点休息，少熬夜";
+            else timeChange = "夜深了，早点休息哦，宝贝";
         
             document.getElementsByClassName("announcement_content")[0].innerHTML =
                 `欢迎来自<span>${pos}</span>的小伙伴<br>${timeChange}<br>
-        你距离 <font color=cyan>左.</font> 约有<span>${dist}</span>公里<br>${posdesc}
+        你距离 <font color=cyan>左.</font> 约有<span>${dist}</span>公里<br><br>${posdesc}
         `;
         }
         showWelcome()
