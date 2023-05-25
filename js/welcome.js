@@ -207,7 +207,7 @@ $.ajax({
         
             document.getElementsByClassName("announcement_content")[0].innerHTML =
                 `欢迎来自<span>${pos}</span>的小伙伴<br>${timeChange}<br>
-        你距离 <font color=cyan>左.</font> 约有<span>${dist}</span>公里<br><br>${posdesc}
+        你距离 <font color=red>左.</font> 约有<span>${dist}</span>公里<br><br>${posdesc}
         `;
         }
         showWelcome()
