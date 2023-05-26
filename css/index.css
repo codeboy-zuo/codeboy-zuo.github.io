@@ -6263,7 +6263,7 @@ blockquote.pullquote.right {
     transition: 1s ease-in-out;
   }
   [data-theme="dark"] .author-content-item.map {
-    background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/26/6330ebf1f3e65.jpg) no-repeat center;
+    background: url(https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/img/map.png) no-repeat center;
     background-size: 100%;
   }
   
@@ -6563,7 +6563,7 @@ blockquote.pullquote.right {
     transition: 2s ease-in-out;
   }
   .author-content-item.game-yuanshen {
-    background: url(https://img02.anzhiy.cn/adminuploads/1/2022/12/19/63a079ca63c8a.webp) no-repeat top;
+    background: url(https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/img/game-guangyu.webp) no-repeat top;
     background-size: cover;
     min-height: 300px;
     overflow: hidden;
@@ -6587,9 +6587,9 @@ blockquote.pullquote.right {
     height: 18px;
     margin-right: 0.5rem;
   }
-  .icon-pos-mid {
+  /* .icon-pos-mid {
     background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/25/632fb9cecfc8c.png);
-  }
+  } */
   .author-content-item.game-yuanshen::after {
     box-shadow: 0 -69px 203px 11px #575d8b inset;
     position: absolute;
@@ -6602,7 +6602,7 @@ blockquote.pullquote.right {
   
   .author-content-item.comic-content {
     width: 39%;
-    background: url(https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/violet.jpg) no-repeat top;
+    background: url(https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/img/kenan.jpg) no-repeat top;
     background-size: cover;
     min-height: 300px;
     overflow: hidden;
