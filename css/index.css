@@ -2619,23 +2619,8 @@ figure.highlight pre .javascript .function {
 .error404 + #rightside {
   display: none;
 }
-#about-page .author-content-item-group.column.mapAndInfo {
-  width: 100%;
-}
-#about-page .author-content-item-group.column {
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  -o-box-orient: horizontal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-#about-page .author-content-item.map {
-  width: 50%;
-}
-#about-page .author-content-item.selfInfo {
-  height: 100%;
-  width: 49%;
+ {
+  body: 1;
 }
 .article-sort {
   margin: 0.25rem;
@@ -15616,6 +15601,24 @@ body[data-type="about"] #web_bg {
   width: 100%;
   transition: .6s;
 }
+
+.careers{
+  position: relative;
+}
+.careers::after{
+  position: absolute;
+  content: '';
+  left:0;
+  top:0;
+  background-image: url(https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/img/career.webp);
+  opacity: 0.3;
+  background-repeat: no-repeat;
+  /* 背景图像大小 */
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: right;
+}
 :root {
   --loadingbar-background-color: #2c2b30;
   --loadingbar-prospect-color: #ece5d8;
@@ -15645,7 +15648,7 @@ body[data-type="about"] #web_bg {
   filter: drop-shadow(0 -500px 0 var(--loadingbar-prospect-color));
   width: 500px;
   height: 62.5px;
-  background: url("https://yuanshen.site/imgs/loading-bar.png") no-repeat left 100%;
+  /* background: url("https://yuanshen.site/imgs/loading-bar.png") no-repeat left 100%; */
   background-size: 500px 62.5px;
   background-position-x: 0;
 }
