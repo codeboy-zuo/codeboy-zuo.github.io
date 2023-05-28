@@ -230,11 +230,18 @@ template {
   line-height: 16px;
   height: 16px;
 }
-.anzhiyufont,
+.fontawesomeIcon,
 hr:before,
 #article-container a.headerlink::before,
 #post .post-outdate-notice:before,
 .note:not(.no-icon)::before {
+  display: inline-block;
+  font-weight: 600;
+  font-family: 'Font Awesome 6 Free';
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.anzhiyufont {
   font-family: "anzhiyufont";
   font-size: 16px;
   font-style: normal;
@@ -9837,7 +9844,7 @@ blockquote {
   border-left: 5px solid #ff8080;
 }
 #post .post-outdate-notice:before {
-  content: '\e66f';
+  content: '\f071';
   position: absolute;
   top: 50%;
   left: 0.9em;
@@ -15270,6 +15277,23 @@ body[data-type="about"] #web_bg {
 
 .author-content-item.comic-content {
   width: 39%;
+  background: url(https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/img/kenan.jpg) no-repeat top;
+  background-size: cover;
+  min-height: 300px;
+  overflow: hidden;
+  color: rgb(255, 255, 255);
+}
+.author-content-item.comic-content::after {
+  box-shadow: 0 -48px 203px 11px #fbe9b8 inset;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/* .author-content-item.comic-content {
+  width: 39%;
   min-height: 300px;
   overflow: hidden;
 }
@@ -15330,7 +15354,7 @@ body[data-type="about"] #web_bg {
   height: 100%;
   top: 0;
   left: 0;
-}
+} */
 
 .author-content-item.like-technology {
   min-height: 230px;
@@ -16338,7 +16362,7 @@ h1#site-title {
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 3em;
+  font-size: 16px;
   /* 可以定义图标大小 */
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -16366,9 +16390,9 @@ svg.icon {
 }
 
 /*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */
-/* #page-header:not(.not-top-img):before {
+#page-header:not(.not-top-img):before {
   background-color: transparent !important;
-} */
+}
 
 /* 文章页面正文背景 */
 div#post {
