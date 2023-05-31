@@ -39,7 +39,7 @@ $.ajax({
                     posdesc = "よろしく，一起去看樱花吗";
                     break;
                 case "越南":
-                    posdesc = "Trời ơi,chào mừng em bé của anh";
+                    posdesc = "Trời ơi,chào mừng bé dễ thương";
                     break;
                 case "美国":
                     posdesc = "Make America Great Again!";
