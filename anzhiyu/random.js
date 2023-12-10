@@ -1,3 +1,3 @@
-var posts=["2023/05/09/Butterfly主题优化/","2023/05/13/github-calendar/","2023/05/21/abbrlink/","2023/05/08/markdown/","2023/05/21/music/","2023/05/21/newPostIcon/"];function toRandomPost(){
+var posts=["post/30229.html","post/46969.html","post/47479.html","post/19236.html","post/21442.html","post/4333.html"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
