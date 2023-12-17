@@ -196,12 +196,12 @@ $.ajax({
             else timeChange = "夜深了，早点休息，少熬夜";
         
             document.getElementsByClassName("announcement_content")[0].innerHTML =
-        `<div style="text-align: center;">
-        欢迎来自<span style="color: yellow;font-weight: bold">${pos}</span>的小伙伴，${timeChange}<br>
-        你距离<span style="color: red;">左.</span>约有<span style="color: yellow;font-weight: bold">${dist}</span>公里
-        <br>
-        ${posdesc}
-    </div>`;
+        `<div style="text-align: center;font-family:STLiti;">
+        欢迎来自<span style="color: yellow;font-weight: bold;font-size:105%;">${pos}</span>的小伙伴，
+        <span style="color: yellow;font-weight: bold;font-size:105%;">${timeChange}</span><br>
+        你距离<span style="color: red;">左.</span>约有<span style="color: yellow;font-weight: bold;font-size:105%;">${dist}</span>公里
+        <br>${posdesc}    
+        </div>`;
         }
         showWelcome()
     }
