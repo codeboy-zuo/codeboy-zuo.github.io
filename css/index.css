@@ -21242,9 +21242,7 @@ html.hide-aside .layout > div:first-child {
     color:#fff;
 }
 
-a{
-    text-decoration:none;
-}
+
 #aside-content .card-widget#card-wechat {
   background: #57bd6a;
   display: flex;
