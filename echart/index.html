@@ -56,7 +56,7 @@
   islazyload: true,
   isAnchor: false,
   shortcutKey: undefined,
-  autoDarkmode: true
+  autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   configTitle: 'lanの先行其言而后从之',
   title: '博客统计',
@@ -158,28 +158,9 @@
       }
       const t = saveToLocal.get('theme')
     
-          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-          if (t === undefined) {
-            if (isLightMode) activateLightMode()
-            else if (isDarkMode) activateDarkMode()
-            else if (isNotSpecified || hasNoSupport) {
-              const now = new Date()
-              const hour = now.getHours()
-              const isNight = hour <= 6 || hour >= 18
-              isNight ? activateDarkMode() : activateLightMode()
-            }
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-              if (saveToLocal.get('theme') === undefined) {
-                e.matches ? activateDarkMode() : activateLightMode()
-              }
-            })
-          } else if (t === 'light') activateLightMode()
-          else activateDarkMode()
-        
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
         if (asideStatus === 'hide') {
@@ -461,7 +442,7 @@ if (true) {
         radius: ['15%', '90%'],
         center: ['50%', '55%'],
         sort: 'desc',
-        data: [{"name":"Butterfly主题优化","value":5,"path":"categories/Butterfly主题优化/","id":"clw1smku70004o89p99pzad5c","parentId":"0"},{"name":"Markdown","value":1,"path":"categories/Markdown/","id":"clw1smkvd000ro89phh7daamd","parentId":"0"},{"name":"服务器","value":1,"path":"categories/服务器/","id":"clw1smkvj0010o89p77em1s40","parentId":"0"},{"name":"生活日常","value":1,"path":"categories/生活日常/","id":"clw1smkvm0018o89p6o878ljh","parentId":"0"}],
+        data: [{"name":"Butterfly主题优化","value":5,"path":"categories/Butterfly主题优化/","id":"clw1sqc5o0004vw9pf76e4pyz","parentId":"0"},{"name":"Markdown","value":1,"path":"categories/Markdown/","id":"clw1sqc6y000rvw9p45fyhwol","parentId":"0"},{"name":"服务器","value":1,"path":"categories/服务器/","id":"clw1sqc740010vw9pgkaq2mk8","parentId":"0"},{"name":"生活日常","value":1,"path":"categories/生活日常/","id":"clw1sqc780018vw9pce38cn7b","parentId":"0"}],
         itemStyle: {
           borderColor: '#fff',
           borderWidth: 2,
@@ -483,7 +464,7 @@ if (true) {
           color: color,
           formatter: '{b} : {c} ({d}%)'
         },
-        data: [{"name":"Butterfly主题优化","value":5,"path":"categories/Butterfly主题优化/","id":"clw1smku70004o89p99pzad5c","parentId":"0"},{"name":"Markdown","value":1,"path":"categories/Markdown/","id":"clw1smkvd000ro89phh7daamd","parentId":"0"},{"name":"服务器","value":1,"path":"categories/服务器/","id":"clw1smkvj0010o89p77em1s40","parentId":"0"},{"name":"生活日常","value":1,"path":"categories/生活日常/","id":"clw1smkvm0018o89p6o878ljh","parentId":"0"}],
+        data: [{"name":"Butterfly主题优化","value":5,"path":"categories/Butterfly主题优化/","id":"clw1sqc5o0004vw9pf76e4pyz","parentId":"0"},{"name":"Markdown","value":1,"path":"categories/Markdown/","id":"clw1sqc6y000rvw9p45fyhwol","parentId":"0"},{"name":"服务器","value":1,"path":"categories/服务器/","id":"clw1sqc740010vw9pgkaq2mk8","parentId":"0"},{"name":"生活日常","value":1,"path":"categories/生活日常/","id":"clw1sqc780018vw9pce38cn7b","parentId":"0"}],
         itemStyle: {
           emphasis: {
             shadowBlur: 10,
