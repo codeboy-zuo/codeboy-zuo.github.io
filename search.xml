@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>vscode实现copilot补全</title>
+      <link href="/post/2052.html"/>
+      <url>/post/2052.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>很久没水了，今天水一篇博客<br>本博客基于始皇的<a href="https://github.com/linux-do/override">Override</a><br>话不多说，直接开干</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="下载override项目"><a href="#下载override项目" class="headerlink" title="下载override项目"></a>下载override项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/linux-do/override.git</span><br></pre></td></tr></table></figure><h3 id="在该目录下新建文件config-json"><a href="#在该目录下新建文件config-json" class="headerlink" title="在该目录下新建文件config.json"></a>在该目录下新建文件config.json</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;bind&quot;: &quot;0.0.0.0:8181&quot;,</span><br><span class="line">  &quot;proxy_url&quot;: &quot;&quot;,</span><br><span class="line">  &quot;timeout&quot;: 600,</span><br><span class="line">  &quot;codex_api_base&quot;: &quot;https://api.deepseek.com/beta/v1&quot;,</span><br><span class="line">  &quot;codex_api_key&quot;: &quot;sk-&quot;,</span><br><span class="line">  &quot;codex_api_organization&quot;: &quot;&quot;,</span><br><span class="line">  &quot;codex_api_project&quot;: &quot;&quot;,</span><br><span class="line">  &quot;codex_max_tokens&quot;: 500,</span><br><span class="line">  &quot;code_instruct_model&quot;: &quot;deepseek-coder&quot;,</span><br><span class="line">  &quot;chat_api_base&quot;: &quot;https://api.deepseek.com/v1&quot;,</span><br><span class="line">  &quot;chat_api_key&quot;: &quot;sk-&quot;,</span><br><span class="line">  &quot;chat_api_organization&quot;: &quot;&quot;,</span><br><span class="line">  &quot;chat_api_project&quot;: &quot;&quot;,</span><br><span class="line">  &quot;chat_max_tokens&quot;: 4096,</span><br><span class="line">  &quot;chat_model_default&quot;: &quot;deepseek-chat&quot;,</span><br><span class="line">  &quot;chat_model_map&quot;: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;chat_locale&quot;: &quot;zh_CN&quot;,</span><br><span class="line">  &quot;auth_token&quot;: &quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>其中的<code>codex_api_key</code>和<code>chat_api_key</code>换成<a href="https://platform.deepseek.com/>">deepseek</a>中申请的<code>API Keys</code>，<br>用国内手机号注册送价值10元的tokens，<del>就是coder速度有点慢</del></p></blockquote><p>运行<code>docker-compose up -d</code>，如果在服务器可以<code>curl 127.0.0.1:8181</code>若显示 404 not found 则部署成功，<br>本地的话直接浏览器访问。</p><h3 id="vscode-安装好copilot"><a href="#vscode-安装好copilot" class="headerlink" title="vscode 安装好copilot"></a>vscode 安装好copilot</h3><p>按<kbd>Ctrl+shift+p</kbd>输入 <code>settings</code> 找到<code>copilot</code>的设置改为如下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&quot;github.copilot.advanced&quot;: &#123;</span><br><span class="line">    &quot;debug.overrideCAPIUrl&quot;: &quot;http://127.0.0.1:8181/v1&quot;,</span><br><span class="line">    &quot;debug.overrideProxyUrl&quot;: &quot;http://127.0.0.1:8181&quot;,</span><br><span class="line">    &quot;debug.chatOverrideProxyUrl&quot;: &quot;http://127.0.0.1:8181/v1/chat/completions&quot;,</span><br><span class="line">    &quot;authProvider&quot;: &quot;github-enterprise&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;github-enterprise.uri&quot;: &quot;https://cocopilot.org&quot;</span><br></pre></td></tr></table></figure><p>如果是部署在服务器上，把<code>ip</code>改成服务器公网ip即可，然后保存。</p><h3 id="最后，最关键的一步"><a href="#最后，最关键的一步" class="headerlink" title="最后，最关键的一步!!"></a>最后，最关键的一步!!</h3><p>你得先拥有<a href="https://linux.do">Linux Do</a>论坛账号，因为copilot要求你登录github账号，此处，咱是直接对接 linux do 账号。具体请移步<a href="https://linux.do/t/topic/94939">论坛</a>，enjoy!!</p><img src="https://bg-imgs.oss-cn-hangzhou.aliyuncs.com/post/copilot.png" align="center" />]]></content>
+      
+      
+      <categories>
+          
+          <category> copilot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> copilot </tag>
+            
+            <tag> vscode </tag>
+            
+            <tag> deepseek </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>服务器部署的docker项目的数据设置域名进行访问</title>
       <link href="/post/62556.html"/>
       <url>/post/62556.html</url>
